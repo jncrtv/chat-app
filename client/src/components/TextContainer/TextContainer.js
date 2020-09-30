@@ -29,3 +29,5 @@ const TextContainer = ({ users }) => (
 );
 
 export default TextContainer;
+
+//Implement update on chat list when users are removed
