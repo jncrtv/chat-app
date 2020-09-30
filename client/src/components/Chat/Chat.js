@@ -2,22 +2,24 @@ import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client'
 
+import './Chat.css';
+
 let socket;
 
 const Chat = ({ location }) => {
-  const [buyer, setBuyer] = useState('');
-  const [seller, setSeller] = useState(''); 
-  const ENDPOINT = 'localhost:5002';
+  const [name, setName] = useState('');
+  const [room, setRoom] = useState(''); 
+  const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
-    const { buyer, seller } = queryString.parse(location.search);
+    const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
 
-    setBuyer(buyer);
-    setSeller(seller);
+    setName(name);
+    setRoom(room);
 
-    socket.emit('message', { buyer, seller });
+    socket.emit('message', { name, room });
      
   }, [ENDPOINT, location.search])
 
