@@ -7,7 +7,7 @@ import Chat from './components/Chat/Chat'
 
 const App = () => (
   <Router>
-    <Route path="/" exact component={Message} />
+    <Route path="/message" exact component={Message} />
     <Route path="/chat" exact component={Chat} />
   </Router>
 );

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Message = (props) => {
+const Message = () => {
 
   const [buyer, setBuyer] = useState(''); //set to buyer
   const [seller, setSeller] = useState(''); //set to seller
 
   // SET STATE FOR buyer and seller using props
   // temporarily hardcoded
-  setBuyer('BUYER');
-  setSeller('SELLER');
+  // setBuyer('BUYER');
+  // setSeller('SELLER');
 
   return (
     <div>
@@ -22,3 +22,4 @@ const Message = (props) => {
 }
 
 export default Message; 
+
